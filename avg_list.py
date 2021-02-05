@@ -2,12 +2,19 @@
 
 def avg_list(elements):
     if isinstance(elements, list):
+        # Empty List case
+        if len(elements) == 0:
+            return 0
+
         sum = 0
         count = 0
 
         for element in elements:
-            sum += element
-            count += 1
+            if type(element) != int and type(element) != float:
+                raise TypeError
+            else:
+                sum += element
+                count += 1
         
         return sum / count
 
